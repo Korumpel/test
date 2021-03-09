@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Title</title>
+        <link rel="stylesheet" href="style.css" />
+        <script>
+
+        function f() {
+
+
+        var vg;
+        var vp;
+        var va;
+        var vb;
+        var vKa;
+        var vKb;
+        var vA;
+        var vB;
+        var vAusgabeHTML = "";
+
+        vg = document.getElementById("idg").value;
+        vp = document.getElementById("idp").value;
+        va = document.getElementById("ida").value;
+        vb = document.getElementById("idb").value;
+
+
+
+
+        vA = Math.pow(vg, va) % vp;
+
+        vB = Math.pow(vg, vb) % vp;
+
+        vKa = Math.pow(vB, va) % vp;
+
+        vKb = Math.pow(vA, vb) % vp;
+
+
+
+
+         vAusgabeHTML = vAusgabeHTML + "Öffentlicher Schlüssel Alice:" + vA + "</br>"
+
+         vAusgabeHTML = vAusgabeHTML + "Öffentlicher Schlüssel Bob:" + vB + "</br>"
+
+        vAusgabeHTML = vAusgabeHTML + "---------------------------------------------" +  "</br>"
+
+         vAusgabeHTML = vAusgabeHTML + "Generierter Schlüssel K Alice:" + vKa + "</br>"
+
+         vAusgabeHTML = vAusgabeHTML + "Generierter Schlüssel K Bob:" + vKb + "</br>"
+
+        vAusgabeHTML = vAusgabeHTML;
+
+
+
+
+        document.getElementById("AusgabeHTML").innerHTML = vAusgabeHTML;
+
+
+
+
+
+
+
+
+
+
+
+        }
+
+
+        </script>
+    </head>
+    <body>
+        <h1>Berechnung vom Schlüssel K nach Mr. Diffie-Hellman</h1>
+1.)Alice und Bob eignen sich auf: <p>
+
+
+      g =  <input id="idg" type="text" value="2"></br>
+      p =   <input id="idp" type="text" value="13"></p>
+      --------------------------------------------- </p>
+      2.) Alice wählt die Geheime Zahl a: </br>
+        a = <input id="ida" type="text" value="5"> </br>
+        3.) Bob wählt die Geheime Zahl b: </br>
+      b =   <input id="idb" type="text" value="8"></p>
+
+      <button onClick="f();">Berechne den Schlüssel K!</button> </p>
+
+
+<div id="AusgabeHTML">
+
+</div>
+
+    </body>
+</html>
